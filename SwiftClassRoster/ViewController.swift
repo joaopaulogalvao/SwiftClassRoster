@@ -9,6 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  @IBAction func showNextName(sender: AnyObject) {
+  }
+  
+  
+  @IBAction func showPreviousName(sender: AnyObject) {
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
