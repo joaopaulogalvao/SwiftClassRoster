@@ -10,6 +10,8 @@ import Foundation
 
 class Roster {
   
+  var name = ""
+  var array = ["Student1","Student2","Student3","Student4","Student5"]
   
-  
+
 }
