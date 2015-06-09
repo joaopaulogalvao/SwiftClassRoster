@@ -9,14 +9,14 @@
 import Foundation
 
 class Roster {
+
   
-  let name = ""
-  let array = ["Student1","Student2","Student3","Student4","Student5"]
+  let name : String
   
-  init(name: String, array: Array){
+
+  init(name: String){
     self.name = name
-    self.array = array
   }
-  
+
 
 }
