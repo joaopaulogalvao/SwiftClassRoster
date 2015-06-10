@@ -11,8 +11,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  var studentIndex = 0
-  var studentName: [String] = ["Student1","Student2","Student3","Student4","Student5"]
+  var studentIndex = -1
+  var studentName: [String] = ["Student1","Student2","Student3","Student4","Student5", "Student6"]
   
   @IBOutlet weak var labelName: UILabel!
   
@@ -21,24 +21,34 @@ class ViewController: UIViewController {
   @IBAction func showNextName(sender: AnyObject) {
     
     
-    labelName.text = studentName[studentIndex]
-    
-    if studentIndex < studentName.count - 1 {
+    if studentIndex >= -1  && studentIndex < studentName.count - 1 {
       ++studentIndex
+      println(studentIndex)
+      labelName.text = studentName[studentIndex]
       
     }
     
+    if studentIndex == studentName.count - 1 {
+      labelName.text = studentName[studentIndex]
+      studentIndex = -1
+    }
   }
   
   @IBAction func showPreviousName(sender: AnyObject) {
     
     
-    if studentIndex >= studentName.count - 4 {
-      labelName.text = studentName[studentIndex - 1]
-      --studentIndex
+    if studentIndex > 0 {
       
+      --studentIndex
+      println(studentIndex)
+      labelName.text = studentName[studentIndex]
+      
+    } else if studentIndex == 0 {
+      studentIndex = studentName.count - 1
+      labelName.text = studentName[studentIndex]
     }
-
+    
+    
   }
   
   override func viewDidLoad() {
